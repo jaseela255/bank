@@ -1,0 +1,71 @@
+ {% load static %}
+
+
+
+
+ <header class="header" >
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+          <div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+            <div class="logo"><a href="index.html"> <img src="{% static 'img/bank2.png' %}" width="200px" height="50px"></a></div>
+            <nav class="main_nav">
+              <ul class="d-flex flex-row align-items-start justify-content-start">
+                <li class="nav-item active" >
+                  <a class="nav-link" href="{% url 'bankapp:demo' %}">Home <span class="sr-only" ></span></a>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Branches
+                    </a>
+                  
+                
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Category:Banks_based_in_Thrissur">Thrissure</a>
+                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kozhikode">Kozikkod</a>
+                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Malappuram">Malappuram</a>
+                    <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Kollam">Kollam</a>
+                  </div>
+                </li>
+                       
+                    
+           
+        
+                  {% if user.is_authenticated %}
+        
+                  
+        
+                  <li class="nav-item">Hello{{user.username}}</li>
+                  <li class="nav-item"></li>
+                      <a class="nav-link" href="credentials/logout">Logout</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                       
+                  {% else %}
+                </li>
+                <li class="nav-item" >
+                  <a class="nav-link" href="credentials/login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="credentials/register">Register</a>
+               
+                {% endif %}
+              </ul>
+            </div>
+          </nav>
+
+            <!-- Hamburger -->
+
+            
+    </ul>
+  </div>
+</header>
+
+
+
+<div class="home">
+  <div class="background_image" style="background-image:url({%static 'img/back2.jpg' %})"></div>
+</div>
+
+ 
+

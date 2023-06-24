@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+
+
+
+
+
+<div class="about">
+	<div class="container" >
+		<div class="row">
+			<div class="col text-center">
+				
+				<div class="section_title"><h2>A few words about us</h2></div>
+			</div>
+		</div>
+		<div class="row about_row">
+			<div class="col-lg-6">
+				<div class="about_content">
+					
+					<div class="about_text">
+						<p>One of the earliest banks in South India,  "South Indian Bank" came into being during the Swadeshi movement. The establishment of the bank was the fulfillment of the dreams of a group of enterprising men who joined together at Thrissur, a major town (now known as the Cultural Capital of Kerala), in the erstwhile State of Cochin to provide for the people a safe, efficient and service oriented repository of savings of the community on one hand and to free the business community from the clutches of greedy money lenders on the other by providing need based credit at reasonable rates of interest.
+
+							Translating the vision of the founding fathers as its corporate mission, the bank has during its long sojourn been able to project itself as a vibrant, fast growing, service oriented and trend setting financial intermediary.</p>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="about_image"><img src="{%static 'img/13.jpg' %}" alt=""></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="team">
+	<div class="container">
+		<div class="row">
+			<div class="col text-center">
+				
+				<div class="section_title"><h2>Services</h2></div>
+			</div>
+		<div class="row team_row">
+			{% for i in result %}
+			<!-- Team Item -->
+			<div class="col-xl-3 col-md-6 team_col">
+				<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+					<div class="team_image"><img src="{{i.img.url}}" alt=""></div>
+					<div class="team_content">
+						<div class="team_title"><a href="#">{{i.name}}</a></div>
+						<div class="team_text">
+							<p>{{i.desc}} </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
+
+{% endblock %}
